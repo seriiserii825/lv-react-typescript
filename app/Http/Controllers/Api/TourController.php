@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\TourResource;
 use Illuminate\Http\Request;
 
 class TourController extends Controller
@@ -14,7 +15,7 @@ class TourController extends Controller
      */
     public function index()
     {
-        //
+        return TourResource::collection(\App\Models\Tour::all());
     }
 
     /**
